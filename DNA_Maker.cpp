@@ -25,30 +25,31 @@ int main()
 
 
     ///User input control
-    int length1;
+    //create two lists
+    int length1;    //Lengths of both lists
     int length2;
-    acid* a1 = NULL;
+    acid* a1 = NULL;    //Create both lists with a NULL at the head.
     acid* a2 = NULL;
     char choice = 'z';
-    cout << "Please select a number of 2 or greater." << endl;
+    cout << "Please select a number of 2 or greater." << endl;  //Create both lists of lengths obtained from user.
     cout << "How many links in chain 1? ";
     cin >> length1;
     cout << "How many links in chain 2? ";
     cin >> length2;
 
-    if((length1 <= 1) || (length2 <= 1))
+    if((length1 <= 1) || (length2 <= 1))  //If either langth are less than 2, get another value from the user.
         cout << "Try again." << endl;
     else
     {
-        a1 = new acid(length1);
+        a1 = new acid(length1); //create the chains.
         a1->display_acid();
         cout << endl;
         a2 = new acid(length2);
         a2->display_acid();
         cout << endl;
-        cout << "Would you like to compare them? Y/N: ";
+        cout << "Would you like to compare them? Y/N: "; //ask user if they would like to compare the chains.
         cin >> choice;
-        if(choice == 'y' || choice == 'Y')
+        if(choice == 'y' || choice == 'Y')  //if Y, compare, if N, exit program.
             a1->acid_comparison(a1, a2);
         else
             return 0;
